@@ -12,7 +12,13 @@ type book = {
 
 const page = async () => {
 	const getBooks = async () => {
-		const res = await fetch(`${getHost()}/api/getBook`);
+		const res = await fetch(`${getHost()}/api/getBook`, {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			cache: "no-store",
+		});
 
 		if (!res.ok) {
 			throw new Error("Failed to fetch data");
