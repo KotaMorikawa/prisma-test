@@ -1,6 +1,7 @@
 // "use client";
 
 import React from "react";
+import { getHost } from "../lib/getHost";
 
 type book = {
 	id: number;
@@ -10,12 +11,6 @@ type book = {
 };
 
 const page = async () => {
-	const getHost = () => {
-		return process.env.URL
-			? "https://" + process.env.URL
-			: "http://localhost:3000";
-	};
-
 	const getBooks = async () => {
 		const res = await fetch(`${getHost()}/api/getBook`);
 
