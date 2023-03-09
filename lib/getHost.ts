@@ -1,5 +1,5 @@
 export const getHost = () => {
-	return process.env.URL
-		? "https://" + process.env.URL
+	return process.env.VERCEL_URL
+		? "https://" + process.env.VERCEL_URL
 		: "http://localhost:3000";
 };
